@@ -128,19 +128,5 @@ namespace DemoApp.ViewModel
                 App.Current.MainPage.Navigation.PushAsync(new MainPage());
             }
         }
-
-        void RegisterProcedure()
-        {
-            DemoApp.Model.Register register = new Register(FirstName, LastName, Password, ConfirmPassword);
-            if (!register.RCheckInformation())
-            {
-                Application.Current.MainPage.DisplayAlert("Validation Fails", register.ValidationMessage, "OK");
-            }
-            else
-            {
-                App.Current.MainPage.DisplayAlert("Success", "Registered!!!", "OK");
-                App.Current.MainPage.Navigation.PushAsync(new MainPage());
-            }           
-        }
     }
 }

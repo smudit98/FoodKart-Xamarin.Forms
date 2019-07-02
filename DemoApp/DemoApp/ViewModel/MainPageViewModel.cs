@@ -115,7 +115,7 @@ namespace DemoApp.ViewModel
 
         private void OnLoginCommandExecute(User obj)
         {
-            User user = new User(obj.Password, obj.Username);
+            User user = new User(obj.Username, obj.Password);
             if (user.CheckInformation())
             {
                 App.Current.MainPage.Navigation.PushAsync(new MasterDetailLearningPage());
