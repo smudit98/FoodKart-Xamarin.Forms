@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage 
+             
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="DemoApp.Views.MasterDetailLearningPage"
+             MasterBehavior="Popover"
+             xmlns:local ="clr-namespace:DemoApp.MenuItems"
+             xmlns:v="clr-namespace:DemoApp.Views"
+             xmlns:n="clr-namespace:DemoApp"
+             >
+    <MasterDetailPage.Master>
+        <ContentPage BackgroundColor="White" Title="Home">
+            <!--<StackLayout>
+
+
+                <Image Source="pizza.jpg"/>
+                <Button  ImageSource="user.png" Text="Food" WidthRequest="100" HorizontalOptions="Start"  Clicked="OnMenu1ButtonClicked"/>
+                <Button Text="orders"   Clicked="OnMenu2ButtonClicked"/>
+                <Button Text="Chat"/>
+                <Button Text="Sign Out"  Clicked="OnSignoutButtonClicked"/>
+            </StackLayout>-->
+            <StackLayout>
+                <Image Source="pizza.jpg"/>
+                <ListView x:Name="listView" x:FieldModifier="public">
+                    <ListView.ItemsSource>
+                        <x:Array Type="{x:Type local:MasterPageItem}">
+                            <local:MasterPageItem Title="Food" Icon="food.png" TargetType="{x:Type v:Page1}" />
+                            <local:MasterPageItem Title="orders" Icon="cart.png" TargetType="{x:Type v:Page2}" />
+                            <local:MasterPageItem Title="SignOut" Icon="user.png" TargetType="{x:Type n:MainPage}" />
+                        </x:Array>
+                    </ListView.ItemsSource>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Padding="5,10">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="30"/>
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Image Source="{Binding Icon}" />
+                                    <Label Grid.Column="1" Text="{Binding Title}" />
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ContentPage>
+    </MasterDetailPage.Master>
+    
+    <MasterDetailPage.Detail>
+        <ContentPage>
+            <StackLayout>
+                <Label Text="Detail page"></Label>
+            </StackLayout>
+        </ContentPage>
+    </MasterDetailPage.Detail>
+
+</MasterDetailPage>

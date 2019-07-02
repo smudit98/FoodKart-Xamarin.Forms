@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             
+             x:Class="DemoApp.Views.Page1">
+    <ContentPage.Content>
+        
+        <ScrollView>
+
+            <StackLayout Margin="20,20,20,20" Padding="0"  >
+                <SearchBar x:Name="searchcustomer" Placeholder="Search"/>
+                <Grid Padding="0" RowSpacing="30">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+               
+                    <Frame Padding="5" Grid.Row="0" BackgroundColor="WhiteSmoke" HasShadow="True">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnfirstitemTapped"/>
+                        </Frame.GestureRecognizers>
+                        <StackLayout Padding="0" Margin="0,0,0,0">
+                            <Image Source="burger.jpg" />
+                            <Label Text="JuicyLucy Burger" FontSize="Medium"  FontAttributes="Bold" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"/>
+                            <Label Text="The fried chicken burger comes filled with real veggies, which include lettuce, salsa, corn, taco mayo, and cheese" BackgroundColor="WhiteSmoke" FontSize="Small" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"/>
+                            <Frame BackgroundColor="Accent" VerticalOptions="End" HeightRequest="45" Padding="5" HasShadow="True">
+                                <StackLayout Padding="0" Margin="0,0,0,0">
+                                    <Label Text="ORDER" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"/>
+                                    <Label Text="$39" FontSize="Medium" TextColor="White" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"/>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </Frame>
+                    <Frame Padding="5" Grid.Row="1" BackgroundColor="WhiteSmoke" HasShadow="True">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnfirstitemTapped"/>
+                        </Frame.GestureRecognizers>
+                        <StackLayout Padding="0" Margin="0,0,0,0">
+                            <Image Source="taco.jpg" />
+                            <Label Text="Chicken Taco" FontSize="Medium"  FontAttributes="Bold" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"/>
+                            <Label Text="The fried chicken shell comes filled with real taco fillings, which include lettuce, salsa, corn, taco mayo, and cheese" BackgroundColor="WhiteSmoke" FontSize="Small" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"/>
+                            <Frame BackgroundColor="Accent" VerticalOptions="End" HeightRequest="45" Padding="5" HasShadow="True">
+                                <StackLayout Padding="0" Margin="0,0,0,0">
+                                    <Label Text="ORDER" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"/>
+                                    <Label Text="$39" FontSize="Medium" TextColor="White" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"/>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </Frame>
+                    <Frame Padding="5" Grid.Row="2" BackgroundColor="WhiteSmoke" HasShadow="True">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnfirstitemTapped"/>
+                        </Frame.GestureRecognizers>
+                        <StackLayout Padding="0" Margin="0,0,0,0">
+                            <Image Source="pizza_slider.jpg" />
+                            <Label Text="Pizza Sliders" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"/>
+                            <Label Text="limited-time Big Pizza Sliders are basically mini pan pizzas sold in a set of nine for the same $10 as a regular large pizza." BackgroundColor="WhiteSmoke" FontSize="Small" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"/>
+                            <Frame BackgroundColor="Accent" VerticalOptions="End" HeightRequest="45" Padding="5" HasShadow="True">
+                                <StackLayout Padding="10" Margin="0,0,0,0">
+                                    <Label Text="ORDER" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"/>
+                                    <Label Text="$10" FontAttributes="Bold" TextColor="White" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"/>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </Frame>
+                    <Frame Padding="5" Grid.Row="3" BackgroundColor="WhiteSmoke" HasShadow="True">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnfirstitemTapped"/>
+                        </Frame.GestureRecognizers>
+                        <StackLayout Padding="0" Margin="0,0,0,0">
+                            <Image Source="burger.png" />
+                            <Label Text="Burger" FontSize="Medium" BackgroundColor="AliceBlue" FontAttributes="Bold" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"/>
+                            <Label Text="Item Description" BackgroundColor="WhiteSmoke" FontSize="Small" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"/>
+                            <Frame BackgroundColor="Accent" VerticalOptions="End" HeightRequest="40" Padding="0" HasShadow="True">
+                                <Label Text="ORDER" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"/>
+                            </Frame>
+                        </StackLayout>
+                    </Frame>
+                    <Frame Padding="5" Grid.Row="4" BackgroundColor="WhiteSmoke" HasShadow="True">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnfirstitemTapped"/>
+                        </Frame.GestureRecognizers>
+                        <StackLayout Padding="0" Margin="0,0,0,0">
+                            <Image Source="burger.png" />
+                            <Label Text="Burger" FontSize="Medium" BackgroundColor="AliceBlue" FontAttributes="Bold" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"/>
+                            <Label Text="Item Description" BackgroundColor="WhiteSmoke" FontSize="Small" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"/>
+                            <Frame BackgroundColor="Accent" VerticalOptions="End" HeightRequest="20" Padding="0" HasShadow="True">
+                                <Label Text="ORDER" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"/>
+                            </Frame>
+                        </StackLayout>
+                    </Frame>
+                    <Frame Padding="5" Grid.Row="5" BackgroundColor="WhiteSmoke" HasShadow="True">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnfirstitemTapped"/>
+                        </Frame.GestureRecognizers>
+                        <StackLayout Padding="0" Margin="0,0,0,0">
+                            <Image Source="burger.png" />
+                            <Label Text="Beach BBQ Burger" FontSize="Medium" BackgroundColor="AliceBlue" FontAttributes="Bold" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"/>
+                            <Label Text="This is the sweet-savory burger of your dreams. The two meat mixture is key here: The sirloin and has clean, distinctive flavor, while the chuck provides fattiness and keeps the burger juicy. " BackgroundColor="WhiteSmoke" FontSize="Small" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"/>
+                            <Frame BackgroundColor="Accent" VerticalOptions="End" HeightRequest="20" Padding="0" HasShadow="True">
+                                
+                                <Label Text="ORDER" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"/>
+                            </Frame>
+                            <Frame BackgroundColor="Accent" VerticalOptions="End" HeightRequest="20" Padding="0" HasShadow="True">
+
+
+                                <Label Text="$50" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"/>
+                            </Frame>
+
+                        </StackLayout>
+                    </Frame>
+                </Grid>
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

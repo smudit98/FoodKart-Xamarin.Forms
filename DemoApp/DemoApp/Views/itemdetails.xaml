@@ -1,0 +1,69 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="DemoApp.Views.itemdetails">
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout HorizontalOptions="Fill">
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="250"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <StackLayout x:Name="OrderList" Grid.Row="0" HorizontalOptions="Fill" VerticalOptions="FillAndExpand">
+                    <Grid HorizontalOptions="FillAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="download.jpg" VerticalOptions="StartAndExpand" Opacity="0.95" Grid.RowSpan="3"/>
+                        <Label Text="JuicyLucy Burger" FontSize="Large"  FontAttributes="Bold" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand" Grid.Row="0"/>
+                        <Label Text="The fried chicken burger comes filled with real veggies, which include lettuce, salsa, corn, taco mayo, and cheese" TextColor="White" FontSize="Medium" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Grid.Row="1"/>
+                        <!--<Label x:Name="PriceLabel" Text="39" Grid.Row="3"/>-->
+                        </Grid>
+                </StackLayout>
+
+
+                <StackLayout Grid.Row="1">
+                        <StackLayout>
+                            <Label Text="{Binding Amount,StringFormat='Total Amount Is: {0}'}"
+                                    
+                                   x:Name="Label_Total" FontSize="Large" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+                            <Label
+                                Text="ADD ITEMS" FontSize="Large" Margin="0,140,0,0" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+                            <Stepper x:Name="_stepper" Maximum="360" Increment="1"
+                            HorizontalOptions="Center" />
+                            <Label x:Name="NumberofItems" Text="{Binding Source={x:Reference _stepper} , Path=Value, StringFormat='Items: {0:F0}'}"
+                            HorizontalOptions="Center"
+                            VerticalOptions="CenterAndExpand" />
+                            <Button Text="Add To Cart" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  />
+                        </StackLayout>
+                        <!--<ListView x:Name="RegisterList" ItemsSource="{Binding ListOfItems, 
+           Mode=TwoWay}"
+                HasUnevenRows="True"  
+                SeparatorVisibility="Default"
+                 VerticalOptions="CenterAndExpand">
+                        <ListView.ItemTemplate >
+                            <DataTemplate >
+                                <ViewCell>
+                                    
+                                </ViewCell>
+
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+
+                    </ListView>-->
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>

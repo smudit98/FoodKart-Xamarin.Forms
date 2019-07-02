@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="DemoApp.Views.Register">
+    <ContentPage.Content>
+        <StackLayout Spacing="20" Padding="20" VerticalOptions="Center">
+           <ListView x:Name="RegisterList" ItemsSource="{Binding ListOfItems, 
+           Mode=TwoWay}"
+                HasUnevenRows="True"  
+                SeparatorVisibility="Default"
+                 VerticalOptions="CenterAndExpand">
+                <ListView.ItemTemplate >
+                    <DataTemplate >
+                        <ViewCell>
+                            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                                <Entry Grid.Row="2" Placeholder="First Name" Text=" {Binding FirstName, Mode=TwoWay}" x:Name="Entry_FirstName" />
+                                <Entry Grid.Row="4" Placeholder="Last Name" Text=" {Binding LastName, Mode=TwoWay}" x:Name="Entry_LastName" />
+                                <Entry Grid.Row="6" Placeholder="Password" Text=" {Binding Password, Mode=TwoWay}" x:Name="Entry_Password" IsPassword="True" />
+                                <Entry Grid.Row="8" Placeholder="Confirm Password" Text=" {Binding ConfirmPassword, Mode=TwoWay}" x:Name="Entry_CPassword" IsPassword="True" />
+                <!--<Entry Grid.Row="4" x:Name="Entry_LastName" Placeholder="Last Name" />
+                <Entry Grid.Row="6" x:Name="Entry_Password" Placeholder="Password" IsPassword="True" />
+                <Entry Grid.Row="8" x:Name="Entry_CPassword" Placeholder="Confirm Password" IsPassword="True" />-->
+                                <Button Text="Register"  Grid.Row="10"
+                                    Command="{Binding 
+                                    Path=BindingContext.RegisterDoneCommand, 
+                                    Source={x:Reference RegisterList}}"
+                                    CommandParameter="{Binding}" VerticalOptions="EndAndExpand">
+                                </Button>
+                                <!--<Button Grid.Row="9" x:Name="Btn_Register" Text="Register" Clicked="RegisterProcedure" />-->
+                                   
+                
+            </Grid>
+            </ViewCell>
+
+            </DataTemplate>
+            </ListView.ItemTemplate>
+
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

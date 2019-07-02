@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="DemoApp.MainPage">
+    <StackLayout Margin="30,230,30,30">
+        <ListView x:Name="LoginList" ItemsSource="{Binding ListOfItems, 
+           Mode=TwoWay}"
+                HasUnevenRows="True"  
+                SeparatorVisibility="Default"
+                 VerticalOptions="CenterAndExpand">
+            <ListView.ItemTemplate >
+                <DataTemplate >
+                    <ViewCell>
+                        <StackLayout Spacing="2" Orientation="Vertical">
+                            
+                            <Entry Placeholder="Enter user name" Text="
+                              {Binding Username, Mode=TwoWay}" 
+                              x:Name="Entry_Username" VerticalOptions="StartAndExpand"/>
+                            
+                            <Entry Placeholder="Enter password" Text="
+                              {Binding Password, Mode=TwoWay}"  IsPassword="true"
+                               x:Name="Entry_Password" VerticalOptions="CenterAndExpand"
+                                   />
+                            
+                            <Button Text="Login" 
+                                    Command="{Binding 
+                                    Path=BindingContext.LoginCommand, 
+                                    Source={x:Reference LoginList}}"
+                                    CommandParameter="{Binding}" VerticalOptions="EndAndExpand">
+                            </Button>
+                            <Button Text="Register" 
+                                    Command="{Binding 
+                                    Path=BindingContext.RegisterCommand, 
+                                    Source={x:Reference LoginList}}"
+                                    CommandParameter="{Binding}" VerticalOptions="EndAndExpand">
+                            </Button>
+                        </StackLayout>
+                    </ViewCell>
+                    
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            
+        </ListView>
+        <Label Text="{Binding LoginMessage}"></Label>
+    </StackLayout>
+    <!--<StackLayout x:Name="LoginView" Spacing="20" Padding="50" VerticalOptions="Center">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" x:Name="Lbl_Username" Text=" Username" />
+            <Entry Grid.Row="1" x:Name="Entry_Username" Placeholder="Username" />
+            <Label Grid.Row="2" x:Name="Lbl_Password" Text="Password" />
+            <Entry Grid.Row="3" x:Name="Entry_Password" Placeholder="Password" IsPassword="True" />
+            <Button Grid.Row="4" x:Name="Btn_Signin" Text="Sign in"  Command="{Binding OnSignInCommandExecute, Source={x:Reference LoginView}}" CommandParameter="{Binding}"/>
+            <Button Grid.Row="5" x:Name="Btn_Register" Text="Register" Clicked="Btn_Register_Clicked" />
+            <Grid Grid.Row="6" x:Name="SplashGrid" BackgroundColor="{StaticResource Primary}">
+                <Image Grid.Row="0" x:Name="logo" Source="logo" VerticalOptions="Center" HorizontalOptions="Center"/>
+            </Grid>
+        </Grid>
+    </StackLayout>-->
+    
+</ContentPage>
